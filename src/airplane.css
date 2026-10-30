@@ -1,0 +1,92 @@
+.airplane-page .eyebrow, .airplane-page .demo-heading h1 em { color: #dfb98c; }
+.airplane-heading h1 { font-size: clamp(40px, 4.2vw, 68px); }
+.airplane-workspace { border: 1px solid #756958; background: #e8e1d5; color: #4b443a; }
+.airplane-source { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 26px; border-bottom: 1px solid #c8bfaf; background: #e9e2d7; }
+.airplane-source > div { display: flex; align-items: center; gap: 7px; }
+.airplane-source > div > span { margin-right: 15px; color: #6e604e; font-size: 11px; }
+.airplane-source button { min-height: 34px; padding: 7px 11px; border: 1px solid transparent; background: transparent; color: #6d5d49; font-size: 11px; }
+.airplane-source button.active { border-color: #a5957d; color: #423b30; background: #f4eee3; }
+.airplane-source .airplane-upload { display: flex; gap: 20px; align-items: center; color: #493f30; border-color: #8e7a60; }
+.airplane-source button:hover { color: #342d22; border-color: #a49176; }
+.airplane-stage { position: relative; height: clamp(510px, 51vw, 720px); overflow: hidden; touch-action: pan-y; isolation: isolate; background: #e8e1d5; }
+.airplane-stage--interactive { cursor: grab; touch-action: none; }
+.airplane-stage--aiming { cursor: grabbing; }
+.airplane-stage__canvas, .airplane-stage__canvas canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.airplane-stage__top { position: absolute; z-index: 1; top: 25px; left: 28px; right: 28px; display: flex; justify-content: space-between; gap: 20px; pointer-events: none; color: #82735f; font-size: 9px; letter-spacing: .13em; }
+.airplane-stage__top b { margin-left: 10px; color: #a36139; font-weight: 600; }
+.airplane-stage__note { position: absolute; top: 91px; left: 42px; display: grid; gap: 15px; max-width: 180px; pointer-events: none; }
+.airplane-stage__note > span { color: #9e8f7b; font-size: 8px; letter-spacing: .14em; }
+.airplane-stage__note strong { color: #5c4c38; font-size: clamp(23px, 2.4vw, 37px); line-height: 1.35; letter-spacing: -.06em; font-weight: 500; }
+.airplane-stage__note small { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #75634d; font-size: 10px; }
+.airplane-stage__steps { position: absolute; top: 93px; right: 28px; display: grid; gap: 18px; pointer-events: none; }
+.airplane-stage__steps > span { display: flex; align-items: center; gap: 12px; color: #6f6250; font-size: 10px; transition: color .3s; }
+.airplane-stage__steps b { font-weight: 400; font-size: 9px; font-variant-numeric: tabular-nums; }
+.airplane-stage__steps span.active { color: #8d4a29; }
+.airplane-stage__steps span.active b { border-bottom: 1px solid #a16840; padding-bottom: 3px; }
+.airplane-stage__steps span.done { color: #6f6859; }
+.airplane-stage__caption { position: absolute; bottom: 27px; left: 30px; right: 25px; display: flex; align-items: center; gap: 10px; pointer-events: none; font-size: 11px; color: #74614a; }
+.airplane-stage__caption > i { width: 24px; height: 1px; background: #a38868; }
+.airplane-stage__charge { position: absolute; bottom: 69px; left: 50%; width: 190px; transform: translateX(-50%); pointer-events: none; }
+.airplane-stage__charge > span { display: flex; justify-content: space-between; color: #74614a; font-size: 10px; }
+.airplane-stage__charge span b { font-variant-numeric: tabular-nums; font-weight: 500; }
+.airplane-stage__charge > i { display: block; height: 3px; margin-top: 8px; background: #b4a28a60; }
+.airplane-stage__charge > i b { display: block; height: 100%; background: #a16b42; }
+.airplane-stage__away { position: absolute; top: 42%; left: 50%; display: grid; gap: 19px; justify-items: center; width: min(80%, 450px); transform: translate(-50%, -50%); text-align: center; animation: airplane-arrive .8s ease both; }
+.airplane-stage__away > span { color: #8f7d62; font-size: 9px; letter-spacing: .18em; }
+.airplane-stage__away strong { color: #62523e; font-size: clamp(19px, 2.4vw, 30px); font-weight: 500; letter-spacing: -.04em; }
+.airplane-stage__away button { padding: 10px 16px; border: 1px solid #a18e70; background: #eee7db; color: #6e573b; font-size: 11px; }
+.airplane-stage__loading { position: absolute; inset: 0; display: grid; place-items: center; color: #7e6c54; background: #e8e1d5e6; font-size: 12px; }
+.airplane-error { position: absolute; left: 20px; right: 20px; bottom: 55px; margin: 0; padding: 13px 16px; border: 1px solid #bd9175; color: #884a30; background: #f8eee3; font-size: 12px; text-align: center; }
+.airplane-controls { display: grid; grid-template-columns: minmax(170px, .8fr) minmax(200px, 1fr) auto; align-items: center; gap: 30px; padding: 24px 28px; border-top: 1px solid #c2b69f; background: #f2ece0; }
+.airplane-controls__intro > span { color: #78644c; font-size: 9px; letter-spacing: .08em; }
+.airplane-controls__intro p { margin: 8px 0 0; color: #564631; font-size: 18px; letter-spacing: -.04em; }
+.airplane-scrub { display: grid; grid-template-columns: 1fr auto; gap: 5px; font-size: 10px; color: #726149; }
+.airplane-scrub > span { grid-column: span 2; display: flex; justify-content: space-between; }
+.airplane-scrub b { color: #95623b; font-weight: 500; font-variant-numeric: tabular-nums; }
+.airplane-scrub input { grid-column: span 2; width: 100%; margin: 4px 0; cursor: pointer; accent-color: #a16b42; }
+.airplane-scrub small { font-size: 9px; color: #7b674f; }
+.airplane-scrub small:last-child { justify-self: end; }
+.airplane-controls__actions { display: flex; align-items: center; gap: 20px; }
+.airplane-reset { min-height: 42px; padding: 8px 0; border: 0; color: #6e5b44; background: transparent; font-size: 11px; }
+.airplane-primary { display: flex; justify-content: space-between; align-items: center; gap: 29px; min-width: 140px; height: 46px; padding: 0 16px; border: 1px solid #8b5b35; color: #fff7e9; background: #95643e; font-size: 12px; transition: background .2s; }
+.airplane-primary:hover { background: #7f522e; }
+.airplane-primary > span { font-size: 18px; font-weight: 400; }
+.airplane-workspace button:disabled, .airplane-workspace input:disabled { opacity: .45; cursor: not-allowed; }
+.airplane-workspace button:active:not(:disabled) { transform: translateY(1px); }
+.airplane-workspace button { white-space: nowrap; }
+.airplane-instruction { display: flex; gap: 13px; align-items: center; padding: 13px 28px; border-top: 1px solid #d3c6b1; color: #756149; background: #e9e0d1; font-size: 10px; }
+.airplane-instruction > i { width: 16px; height: 1px; background: #baa78d; }
+.airplane-instruction > small { margin-left: auto; font-size: 9px; color: #a49278; }
+@keyframes airplane-arrive { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@media (max-width: 1000px) {
+  .airplane-controls { grid-template-columns: minmax(140px, 1fr) minmax(180px, 1fr); gap: 23px; }
+  .airplane-controls__actions { grid-column: span 2; justify-content: end; }
+  .airplane-stage__note { left: 26px; }
+  .airplane-instruction > small { display: none; }
+}
+@media (max-width: 600px) {
+  .airplane-heading h1 { font-size: clamp(34px, 8vw, 46px); }
+  .airplane-source { padding: 13px 14px; gap: 8px; flex-wrap: wrap; }
+  .airplane-source > div { gap: 3px; }
+  .airplane-source > div > span { display: none; }
+  .airplane-source button { min-height: 38px; font-size: 10px; padding: 7px 8px; }
+  .airplane-source .airplane-upload { gap: 9px; }
+  .airplane-stage { height: 570px; }
+  .airplane-stage__top { top: 20px; left: 18px; right: 18px; font-size: 8px; }
+  .airplane-stage__top > span:last-child { font-size: 8px; letter-spacing: 0; }
+  .airplane-stage__note { top: 65px; left: 20px; gap: 7px; }
+  .airplane-stage__note > span { font-size: 7px; }
+  .airplane-stage__note strong { font-size: 23px; }
+  .airplane-stage__note strong br { display: none; }
+  .airplane-stage__note small { font-size: 9px; }
+  .airplane-stage__steps { top: auto; bottom: 62px; left: 19px; right: 19px; display: flex; justify-content: space-between; gap: 7px; }
+  .airplane-stage__steps > span { gap: 5px; font-size: 9px; }
+  .airplane-stage__caption { left: 20px; bottom: 26px; font-size: 10px; gap: 7px; }
+  .airplane-stage__charge { bottom: 104px; }
+  .airplane-controls { padding: 21px 18px; grid-template-columns: 1fr; gap: 20px; }
+  .airplane-controls__intro p { font-size: 17px; }
+  .airplane-controls__actions { grid-column: auto; justify-content: space-between; }
+  .airplane-primary { min-width: 170px; }
+  .airplane-instruction { padding: 13px 15px; gap: 6px; flex-wrap: wrap; font-size: 9px; }
+  .airplane-instruction > i { width: 9px; }
+}

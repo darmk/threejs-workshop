@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a1821"/><stop offset="1" stop-color="#122d32"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#e69f62"/><stop offset="1" stop-color="#ffd39a"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="1200" height="620" fill="url(#bg)"/>
+  <text x="74" y="62" fill="#f1eee6" font-size="29" font-weight="600" font-family="Microsoft YaHei, sans-serif">一条出生年份轨迹，怎样从数据里读出来</text>
+  <text x="74" y="91" fill="#9bb5b8" font-size="16" font-family="Microsoft YaHei, sans-serif">横向是日历年份，纵向是年龄。固定出生年份 1985，每往右一年，年龄也增加一岁。</text>
+  <g stroke="#6c9295" stroke-width="1" opacity=".35">
+    <path d="M140 510H1110M140 410H1110M140 310H1110M140 210H1110M140 110H1110"/>
+    <path d="M140 110V510M390 110V510M640 110V510M890 110V510M1110 110V510"/>
+  </g>
+  <g fill="#9bb5b8" font-size="16" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+    <text x="91" y="516">0 岁</text><text x="82" y="416">20 岁</text><text x="82" y="316">40 岁</text><text x="82" y="216">60 岁</text><text x="82" y="116">80 岁</text>
+    <text x="122" y="548">1950</text><text x="372" y="548">1970</text><text x="622" y="548">1990</text><text x="872" y="548">2010</text><text x="1081" y="548">2026</text>
+  </g>
+  <path d="M587 510L1110 305" fill="none" stroke="#e6a968" stroke-width="15" opacity=".48" filter="url(#glow)"/>
+  <path d="M587 510L1110 305" fill="none" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#ffe0b5" stroke="#d2854e" stroke-width="3"><circle cx="587" cy="510" r="9"/><circle cx="815" cy="419" r="9"/><circle cx="1110" cy="305" r="11"/></g>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="525" y="444" width="178" height="48" fill="#10252c" stroke="#bc8c62"/><text x="542" y="475" fill="#f6dcc0" font-size="17">1985 年 · 0 岁</text>
+    <rect x="715" y="344" width="188" height="48" fill="#10252c" stroke="#bc8c62"/><text x="734" y="375" fill="#f6dcc0" font-size="17">2003 年 · 18 岁</text>
+    <rect x="912" y="235" width="200" height="48" fill="#10252c" stroke="#bc8c62"/><text x="931" y="266" fill="#f6dcc0" font-size="17">2026 年 · 41 岁</text>
+    <text x="74" y="594" fill="#92a7a8" font-size="14">示意图：节点的年龄与年份关系来自 age = year - birthYear；具体人数需读取对应地区的单岁人口数据。</text>
+  </g>
+</svg>

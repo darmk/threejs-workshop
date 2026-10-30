@@ -1,0 +1,44 @@
+# 依赖与构建输出
+/node_modules/
+/dist/
+*.tsbuildinfo
+
+# 环境配置与日志
+.env
+.env.*
+!.env.example
+*.local
+*.log
+
+# 开发缓存与测试产物
+/.cache/
+/.vite/
+/coverage/
+/playwright-report/
+/test-results/
+/.playwright-mcp/
+
+# 本地截图、录制帧与设计中间产物
+/previews/
+/deployment-base-preview.png
+/pulse-new-qa.png
+/articles/**/assets/_frames/
+/articles/**/assets/.frames-*/
+/articles/**/assets/_*-check.png
+/articles/**/assets/.*-mid.png
+/articles/**/assets/_*-recording.webm
+/articles/**/assets/media-info.json
+
+# 文章 Markdown 文档与封面仅保留在本地
+/articles/**/*.[mM][dD]
+/articles/**/cover/
+
+# 编辑器与系统临时文件
+/.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+AGENTS.md
