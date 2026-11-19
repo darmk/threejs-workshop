@@ -27,3 +27,9 @@ These are composite visualizations, not a live view of Earth or current weather.
 - Data and licence: © United Nations, [CC BY 3.0 IGO](https://creativecommons.org/licenses/by/3.0/igo/). Suggested citation: United Nations, Department of Economic and Social Affairs, Population Division (2024). *World Population Prospects 2024, Online Edition*.
 
 The extract is reproducible with `node scripts/build-population-data.mjs <directory-containing-both-gz-files>`. The animation reads the single-age population in year `birth year + age`. This is an age-year diagonal, not a longitudinal count of exactly the same individuals. For countries, migration also affects the numbers.
+
+## Heat Wall data
+
+`heat-wall-beijing.json` caches the default Beijing example: daily maximum 2 m air temperature for June–August 1986–2025, from the [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api) with `models=era5` at 39.9075°N, 116.39723°E and `timezone=Asia/Shanghai`. Rebuild with `node scripts/build-heat-wall-data.mjs` using the Node version in `.nvmrc`. The script fails if a summer does not contain all 92 days. ERA5 reanalysis is a gridded model/observation estimate, not an individual weather-station measurement.
+
+Other cities are resolved via the [Open-Meteo Geocoding API](https://open-meteo.com/en/docs/geocoding-api) and fetched in the browser from the historical API, so they require network access. The view uses a fixed Celsius color scale and reports the mean of daily maxima, the count of days with maximum ≥35°C, and the maximum daily value. Northern summer is June–August; southern summer is December–February, labeled by the ending year. This exploratory weather view is not a climate attribution study or a measurement of felt heat, humidity, or urban heat island intensity.

@@ -21,6 +21,9 @@ const PhotoDepthStage = defineAsyncComponent(() => import('./components/PhotoDep
 const PopulationTideStage = defineAsyncComponent(() => import('./components/PopulationTideStage.vue'))
 const PhotoAirplaneStage = defineAsyncComponent(() => import('./components/PhotoAirplaneStage.vue'))
 const FlowerTrailStage = defineAsyncComponent(() => import('./components/FlowerTrailStage.vue'))
+const DandelionStage = defineAsyncComponent(() => import('./components/DandelionStage.vue'))
+const SandLetterStage = defineAsyncComponent(() => import('./components/SandLetterStage.vue'))
+const HeatWallStage = defineAsyncComponent(() => import('./components/HeatWallStage.vue'))
 
 const defaultPhoto = publicAsset('images/anthurium.webp')
 const defaultPoster = publicAsset('images/liquid-poster.png')
@@ -748,6 +751,27 @@ onBeforeUnmount(() => {
       <div class="demo-footnote"><span>试着画一条弯弯的小径，或用两种花色拼出自己的花园。手机上按住画面划动。</span><span>花会留在原地，清空后可以重新开始。也可以用“在中央种一簇花”按钮操作。</span></div>
     </main>
 
+    <main v-else-if="currentPage === 'dandelion'" class="demo-page dandelion-page">
+      <div class="demo-topline"><a class="back-link" href="#/">← 返回目录</a><span>实验 15 / 风的来信</span></div>
+      <div class="demo-heading dandelion-heading"><div><p class="eyebrow">LET A LITTLE WISH GO.</p><h1>吹一口气，<br /><em>整片蒲公英飞向远处。</em></h1></div><p>一阵风从你这里出发。细小的绒毛离开花球，在光里打个旋，再慢慢飞向看不见的远方。</p></div>
+      <DandelionStage />
+      <div class="demo-footnote"><span>可以开启麦克风轻轻吹气，也可以直接点击按钮。重新长满后，随时再吹一遍。</span><span>麦克风需要浏览器授权和安全连接；声音仅在本机实时分析。</span></div>
+    </main>
+
+    <main v-else-if="currentPage === 'sand'" class="demo-page sand-page">
+      <div class="demo-topline"><a class="back-link" href="#/">← 返回目录</a><span>实验 16 / 写给海的话</span></div>
+      <div class="demo-heading sand-heading"><div><p class="eyebrow">SOME WORDS BELONG TO THE SEA.</p><h1>在沙滩写下一句话，<br /><em>等海浪把它带走。</em></h1></div><p>写下一个名字、一句告别，或下次见面的约定。让海浪慢慢涌来，再退回去。有些话，海听见就好。</p></div>
+      <SandLetterStage />
+      <div class="demo-footnote"><span>可以写下自己的话，也可以选一句示例。海浪退去后会留下湿沙和浅浅的笔画。</span><span>文字只在当前浏览器生成；点击“重新写下”，随时从头开始。</span></div>
+    </main>
+
+    <main v-else-if="currentPage === 'heat'" class="demo-page heat-page">
+      <div class="demo-topline"><a class="back-link" href="#/">← 返回目录</a><span>实验 17 / 数据与叙事</span></div>
+      <div class="demo-heading heat-heading"><div><p class="eyebrow">FORTY SUMMERS, ONE CITY.</p><h1>输入你的城市，<br /><em>把 40 个夏天叠成一堵会发烫的墙。</em></h1></div><p>从 1986 到 2025，每一列是一年，每一格是一天。移到色块上看当天温度，或播放 40 年巡览，看看哪几年热得更久。</p></div>
+      <HeatWallStage />
+      <div class="demo-footnote heat-footnote"><span>色块代表当地夏季逐日最高气温；同一色标在所有城市保持一致。北半球为 6—8 月，南半球为跨年的 12—2 月。</span><span>数据：<a href="https://open-meteo.com/en/docs/historical-weather-api" target="_blank" rel="noopener noreferrer">Open-Meteo / ERA5 再分析</a>。这是模型与观测融合的网格数据，不等同于城市气象站实测；不同城市的局地感受也不能只由气温解释。</span></div>
+    </main>
+
     <footer class="site-footer">
       <span>视觉实验室</span>
       <span>用代码，让画面动起来。</span>
@@ -757,6 +781,12 @@ onBeforeUnmount(() => {
 
 <style>
 .flower-page .eyebrow, .flower-page .demo-heading h1 em { color: #b7c695; }
+.sand-page .eyebrow, .sand-page .demo-heading h1 em { color: #a8ccbd; }
+.sand-page .sand-heading h1 { font-size: clamp(34px, 3.9vw, 64px); }
+@media(max-width:600px) { .sand-page .sand-heading h1 { font-size: clamp(29px, 7.1vw, 42px); } }
+.dandelion-page .eyebrow, .dandelion-page .demo-heading h1 em { color: #d9d5b0; }
+.dandelion-page .dandelion-heading h1 { font-size: clamp(34px, 3.9vw, 64px); }
+@media(max-width: 600px) { .dandelion-page .dandelion-heading h1 { font-size: clamp(29px, 7.1vw, 42px); } }
 .flower-page .flower-heading h1 { font-size: clamp(35px, 4.1vw, 66px); }
 @media(max-width: 600px) { .flower-page .flower-heading h1 { font-size: clamp(31px, 7.7vw, 46px); } }
 </style>

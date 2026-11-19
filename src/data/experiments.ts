@@ -3,7 +3,7 @@ import { publicAsset } from '../utils/publicAsset'
 export type ExperimentCategory = 'image' | 'particles' | 'space' | 'data'
 export type ExperimentId =
   | 'particle' | 'liquid' | 'fireworks' | 'portal' | 'galaxy'
-  | 'rain' | 'earth' | 'tunnel' | 'season' | 'city' | 'depth' | 'population' | 'airplane' | 'flowers'
+  | 'rain' | 'earth' | 'tunnel' | 'season' | 'city' | 'depth' | 'population' | 'airplane' | 'flowers' | 'dandelion' | 'sand' | 'heat'
 
 export type Experiment = {
   id: ExperimentId
@@ -103,6 +103,24 @@ export const experiments: Experiment[] = [
     summary: '划过一片空地，嫩芽跟着指尖生长，花瓣慢慢展开，留下一路春天。',
     category: 'space', categoryLabel: '空间与场景', tags: ['花路', '生长', '鼠标', '自然'],
     image: publicAsset('images/home/14.webp'), imageAlt: '暖色荒地上，白色雏菊、橘色野花和粉色波斯菊沿弯曲小径生长',
+  },
+  {
+    id: 'dandelion', number: '15', href: '#/dandelion-meadow', title: '吹一口气，整片蒲公英飞向远处',
+    summary: '轻轻吹气，绒毛逐渐离开花球，乘着一阵风，飞进远处的光里。',
+    category: 'space', categoryLabel: '空间与场景', tags: ['蒲公英', '吹气', '麦克风', '自然'],
+    image: publicAsset('images/home/15.webp'), imageAlt: '逆光草甸中，一片蒲公英的细小冠毛正在随风飘远',
+  },
+  {
+    id: 'sand', number: '16', href: '#/sand-letter', title: '在沙滩写下一句话，等海浪把它带走',
+    summary: '把想说的话刻进湿沙，等一阵海浪涌来，慢慢冲淡笔画，再退回远处。',
+    category: 'image', categoryLabel: '图像与材质', tags: ['沙滩', '海浪', '文字', '告别'],
+    image: publicAsset('images/home/16.webp'), imageAlt: '浅绿色海浪带着白色泡沫漫过沙滩上的中文沙刻字迹',
+  },
+  {
+    id: 'heat', number: '17', href: '#/heat-wall', title: '输入你的城市，把 40 个夏天叠成一堵会发烫的墙',
+    summary: '输入城市，逐日气温立成四十列热度墙；点一格，回到那年那天。',
+    category: 'data', categoryLabel: '数据与叙事', tags: ['城市', '夏天', '气温', '数据可视化'],
+    image: publicAsset('images/home/17.svg'), imageAlt: '蓝灰到橙红的四十列夏季热度墙，中间有一道高温亮带',
   },
 ]
 
